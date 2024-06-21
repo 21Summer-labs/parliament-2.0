@@ -1,6 +1,3 @@
-Certainly! Here's a revised version of your README with improved structure, clarity, and formatting.
-
----
 
 # Parliament 2.0
 
