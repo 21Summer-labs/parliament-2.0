@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1 class="mb-4">Causes</h1>
+
+<div class="row">
+    <div class="col-md-8">
+        <ul class="list-group">
+            {% for cause in causes %}
+            <li class="list-group-item">
+                <h5>{{ cause.title }}</h5>
+                <p>{{ cause.description }}</p>
+                <button class="btn btn-secondary btn-sm" data-bs-toggle="modal" data-bs-target="#editCauseModal{{ cause.id }}">Edit</button>
+            </li>
+
+            <!-- Edit Cause Modal -->
+            <div class="modal fade" id="editCauseModal{{ cause.id }}" tabindex="-1" aria-labelledby="editCauseModalLabel{{ cause.id }}" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="editCauseModalLabel{{ cause.id }}">Edit Cause</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <form action="{{ url_for('causes.edit_cause', id=cause.id) }}" method="post">
+                                <div class="mb-3">
+                                    <label for="title" class="form-label">Title</label>
+                                    <input type="text" class="form-control" id="title" name="title" value="{{ cause.title }}" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="description" class="form-label">Description</label>
+                                    <textarea class="form-control" id="description" name="description" rows="3" required>{{ cause.description }}</textarea>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Save Changes</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </ul>
+    </div>
+    <div class="col-md-4">
+        <h3>Add New Cause</h3>
+        <form action="{{ url_for('causes.add_cause') }}" method="post">
+            <div class="mb-3">
+                <label for="title" class="form-label">Title</label>
+                <input type="text" class="form-control" id="title" name="title" required>
+            </div>
+            <div class="mb-3">
+                <label for="description" class="form-label">Description</label>
+                <textarea class="form-control" id="description" name="description" rows="3" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Add Cause</button>
+        </form>
+    </div>
+</div>
+{% endblock %}
