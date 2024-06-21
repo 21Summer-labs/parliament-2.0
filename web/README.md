@@ -1,8 +1,16 @@
-o run the application:
+## Parliament 2.0 web
 
-Install the required packages: pip install flask flask-sqlalchemy
-Initialize the database by running python init_db.py
-Start the Flask development server by running python app.py
+To run the application:
+
+Install the required packages: 
+```pip install flask flask-sqlalchemy```\
+
+Initialize the database by running 
+```python init_db.py```
+
+Start the Flask development server by running 
+```python app.py```
+
 Open a web browser and go to http://127.0.0.1:5000/ to see the Parliament 2.0 application
 
 This implementation provides a basic structure for the Parliament 2.0 application, including:
