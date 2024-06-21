@@ -3,7 +3,7 @@
 To run the application:
 
 Install the required packages: 
-```pip install flask flask-sqlalchemy```\
+```pip install flask flask-sqlalchemy```
 
 Initialize the database by running 
 ```python init_db.py```
