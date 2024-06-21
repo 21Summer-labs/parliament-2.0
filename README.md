@@ -1,4 +1,4 @@
-Hello everyone. This is a project to create a digital parliament for the government of kenya where every voice is heard and every voice counts. This is a work in progress and any contributions will be highly valued. Please read the docs here to get a gist of what is being built: [feel free to recommend modifications]
+Hello everyone. This is a project to create a digital parliament for the government of kenya where every voice is heard and every voice counts. This is a work in progress and any contributions will be highly valued. Please read the docs here to get a gist of what is being built: https://github.com/21Summer-AI/parliament-2.0/blob/main/docs/architecture.txt [feel free to recommend modifications]
 
 This workspace contains 3 directories:
 
@@ -21,3 +21,12 @@ Output from script will appear in remix terminal.
 Please note, require/import is supported in a limited manner for Remix supported modules.
 For now, modules supported by Remix are ethers, web3, swarmgw, chai, multihashes, remix and hardhat only for hardhat.ethers object/plugin.
 For unsupported modules, an error like this will be thrown: '<module_name> module require is not supported by Remix IDE' will be shown.
+
+Things you can contribute on:
+Development
+documentation
+testing and bug tracking
+improvements suggestions
+sharing
+
+Help me improve this document!
