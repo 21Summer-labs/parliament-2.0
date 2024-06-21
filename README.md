@@ -1,9 +1,4 @@
-REMIX DEFAULT WORKSPACE
-
-Remix default workspace is present when:
-i. Remix loads for the very first time 
-ii. A new workspace is created with 'Default' template
-iii. There are no files existing in the File Explorer
+Hello everyone. This is a project to create a digital parliament for the government of kenya where every voice is heard and every voice counts. This is a work in progress and any contributions will be highly valued. Please read the docs here to get a gist of what is being built: [feel free to recommend modifications]
 
 This workspace contains 3 directories:
 
