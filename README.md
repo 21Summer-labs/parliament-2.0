@@ -2,6 +2,8 @@
 
 Hello everyone. This is a project to create a digital parliament for the government of kenya where every voice is heard and every voice counts. This is a work in progress and any contributions will be highly valued. Please read the docs here to get a gist of what is being built: https://github.com/21Summer-AI/parliament-2.0/blob/main/docs/architecture.txt [feel free to recommend modifications]
 
+You can also start a conversation in the discussions forum
+
 This workspace contains 3 directories:
 
 1. 'contracts': Holds three contracts with increasing levels of complexity.
