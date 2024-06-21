@@ -1,0 +1,16 @@
+body {
+    padding-bottom: 70px;
+}
+
+.navbar-brand {
+    font-weight: bold;
+}
+
+.list-group-item {
+    margin-bottom: 10px;
+}
+
+.fixed-bottom {
+    background-color: #f8f9fa;
+    border-top: 1px solid #dee2e6;
+}
