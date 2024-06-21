@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1 class="mb-4">Vote on Bill: {{ bill.title }}</h1>
+
+<p>{{ bill.description }}</p>
+
+<h2>Who is the best president so far?</h2>
+<form action="#" method="post">
+    {% for option in options %}
+    <div class="form-check">
+        <input class="form-check-input" type="radio" name="president" id="president{{ loop.index }}" value="{{ option }}">
+        <label class="form-check-label" for="president{{ loop.index }}">
+            {{ option }}
+        </label>
+    </div>
+    {% endfor %}
+    <button type="submit" class="btn btn-primary mt-3">Submit Vote</button>
+</form>
+{% endblock %}
