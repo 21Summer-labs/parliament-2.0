@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1 class="mb-4">Discussions</h1>
+
+<div class="row">
+    <div class="col-md-8">
+        <ul class="list-group">
+            {% for discussion in discussions %}
+            <li class="list-group-item">
+                <h5>{{ discussion.title }}</h5>
+                <p>{{ discussion.content }}</p>
+                <div class="d-flex justify-content-between align-items-center">
+                    <button class="btn btn-secondary btn-sm" data-bs-toggle="modal" data-bs-target="#editDiscussionModal{{ discussion.id }}">Edit</button>
+                    <form action="{{ url_for('discussions.like_discussion', id=discussion.id) }}" method="post" class="d-inline">
+                        <button type="submit" class="btn btn-outline-primary btn-sm">
+                            <i class="bi bi-heart"></i> {{ discussion.likes }}
+                        </button>
+                    </form>
+                </div>
+            </li>
+
+            <!-- Edit Discussion Modal -->
+            <div class="modal fade" id="editDiscussionModal{{ discussion.id }}" tabindex="-1" aria-labelledby="editDiscussionModalLabel{{ discussion.id }}" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="editDiscussionModalLabel{{ discussion.id }}">Edit Discussion</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <form action="{{ url_for('discussions.update_discussion', id=discussion.id) }}" method="post">
+                                <div class="mb-3">
+                                    <label for="title" class="form-label">Title</label>
+                                    <input type="text" class="form-control" id="title" name="title" value="{{ discussion.title }}" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="content" class="form-label">Content</label>
+                                    <textarea class="form-control" id="content" name="content" rows="3" required>{{ discussion.content }}</textarea>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Save Changes</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </ul>
+    </div>
+    <div class="col-md-4">
+        <h3>Start New Discussion</h3>
+        <form action="{{ url_for('discussions.add_discussion') }}" method="post">
+            <div class="mb-3">
+                <label for="title" class="form-label">Title</label>
+                <input type="text" class="form-control" id="title" name="title" required>
+            </div>
+            <div class="mb-3">
+                <label for="content" class="form-label">Content</label>
+                <textarea class="form-control" id="content" name="content" rows="3" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Start Discussion</button>
+        </form>
+    </div>
+</div>
+{% endblock %}
